@@ -8,6 +8,7 @@ import (
 
 type Provider interface {
 	Name() string
+	Capabilities() Capabilities
 	CreatePayment(ctx context.Context, req payrouter.CreatePaymentRequest) (*payrouter.Payment, error)
 	GetPayment(ctx context.Context, id string) (*payrouter.Payment, error)
 }
